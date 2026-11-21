@@ -1,0 +1,90 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Generate Prisma client",
+			"type": "shell",
+			"command": "npx",
+			"args": [
+				"prisma",
+				"generate"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Generate Prisma with cmd",
+			"type": "shell",
+			"command": "cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"node_modules\\.bin\\prisma.cmd",
+				"generate"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Generate Prisma via System32 cmd",
+			"type": "shell",
+			"command": "C:\\Windows\\System32\\cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"node_modules\\.bin\\prisma.cmd",
+				"generate"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Generate Prisma after schema fix",
+			"type": "shell",
+			"command": "C:\\Windows\\System32\\cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"set",
+				"DATABASE_URL=postgresql://user:pass@localhost:5432/smarthome",
+				"&&",
+				"node_modules\\.bin\\prisma.cmd",
+				"generate"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Generate Prisma with environment",
+			"type": "shell",
+			"command": "C:\\Windows\\System32\\cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"\"set DATABASE_URL=postgresql://user:pass@localhost:5432/smarthome&& node_modules\\.bin\\prisma.cmd generate\""
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		},
+		{
+			"label": "Verify production build",
+			"type": "shell",
+			"command": "C:\\Windows\\System32\\cmd.exe",
+			"args": [
+				"/d",
+				"/c",
+				"npm.cmd",
+				"run",
+				"build"
+			],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "build"
+		}
+	]
+}
