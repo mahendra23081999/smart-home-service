@@ -163,6 +163,6 @@ export function DemoBar() {
   const { S, openWA } = useStore();
   return <div className="demo-bar">
     <span>🏠 Trusted maids, cooks, nannies &amp; caregivers for Ahmedabad &amp; Gujarat — <b>interview before you hire</b>.</span>{" "}
-    <button className="link" style={{ color: "#0f7d68" }} onClick={() => openWA()}>WhatsApp {S.settings.phone} →</button>
+    <button className="link" style={{ color: "var(--gold-text)" }} onClick={() => openWA()}>WhatsApp {S.settings.phone} →</button>
   </div>;
 }

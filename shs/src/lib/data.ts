@@ -53,12 +53,12 @@ let _u = 0;
 export const uid = (p: string) => p + (++_u).toString(36) + Math.random().toString(36).slice(2, 6);
 
 export const GROUPS: Record<Group, { n: string; g: string; ic: string; intro: string }> = {
-  maid: { n: "Maids & Domestic Help", g: "linear-gradient(135deg,#1fb597,#0e6b5c)", ic: "home", intro: "Every professional is interviewed and checked before their profile is shared with you, and you can interview them yourself before confirming." },
-  cook: { n: "Cooks & Chefs", g: "linear-gradient(135deg,#f6b35d,#c86d10)", ic: "chef", intro: "Tell us your family's food preferences — Gujarati, Jain, Punjabi, South Indian or continental — and we shortlist cooks who match." },
-  clean: { n: "Housekeeping & Cleaning", g: "linear-gradient(135deg,#25b8cb,#0b6476)", ic: "broom", intro: "Checklist-based cleaning with clear scope agreed before the work starts." },
-  child: { n: "Baby & Child Care", g: "linear-gradient(135deg,#e58aa8,#8c3d66)", ic: "baby", intro: "Child-care professionals follow your routines, your rules and your pediatrician's advice — never their own." },
-  care: { n: "Elder & Patient Care", g: "linear-gradient(135deg,#5b9be0,#1d4e89)", ic: "care", intro: "Compassionate, non-clinical caregivers for daily living support. Nursing professionals are offered only where qualifications are verified." },
-  driver: { n: "Drivers & Office Staff", g: "linear-gradient(135deg,#486a94,#142D4E)", ic: "car", intro: "Driving licences and references are checked before a driver is introduced to your family or office." },
+  maid: { n: "Maids & Domestic Help", g: "linear-gradient(135deg,#c59a37,#725514)", ic: "home", intro: "Every professional is interviewed and checked before their profile is shared with you, and you can interview them yourself before confirming." },
+  cook: { n: "Cooks & Chefs", g: "linear-gradient(135deg,#edc75e,#a96c0d)", ic: "chef", intro: "Tell us your family's food preferences — Gujarati, Jain, Punjabi, South Indian or continental — and we shortlist cooks who match." },
+  clean: { n: "Housekeeping & Cleaning", g: "linear-gradient(135deg,#b8aa7d,#6d6045)", ic: "broom", intro: "Checklist-based cleaning with clear scope agreed before the work starts." },
+  child: { n: "Baby & Child Care", g: "linear-gradient(135deg,#d9b17a,#8c6245)", ic: "baby", intro: "Child-care professionals follow your routines, your rules and your pediatrician's advice — never their own." },
+  care: { n: "Elder & Patient Care", g: "linear-gradient(135deg,#dfc16b,#6e5420)", ic: "care", intro: "Compassionate, non-clinical caregivers for daily living support. Nursing professionals are offered only where qualifications are verified." },
+  driver: { n: "Drivers & Office Staff", g: "linear-gradient(135deg,#665123,#171715)", ic: "car", intro: "Driving licences and references are checked before a driver is introduced to your family or office." },
 };
 
 type SvcRow = [string, string, Group, string, string[], string[], string];
@@ -98,12 +98,12 @@ const CITY_SEED: [string, string, string[]][] = [
   ["bharuch", "Bharuch", ["Zadeshwar", "Shaktinagar", "Link Road", "Station Road"]],
   ["mehsana", "Mehsana", ["Modhera Road", "Radhanpur Road", "Nagalpur", "Highway Area"]],
 ];
-export const CITY_GRAD = ["linear-gradient(135deg,#142D4E,#16A085)", "linear-gradient(135deg,#16695f,#1fb597)", "linear-gradient(135deg,#1d4e89,#5b9be0)", "linear-gradient(135deg,#c86d10,#F4A340)", "linear-gradient(135deg,#0b6476,#25b8cb)", "linear-gradient(135deg,#8c3d66,#e58aa8)"];
+export const CITY_GRAD = ["linear-gradient(135deg,#171715,#725514)", "linear-gradient(135deg,#25221a,#987324)", "linear-gradient(135deg,#30291b,#b38a2c)", "linear-gradient(135deg,#3b2b13,#c08a20)", "linear-gradient(135deg,#171715,#8b6a24)", "linear-gradient(135deg,#382c20,#a37722)"];
 export const DUTY = [
-  { k: "hourly", n: "Hourly Service", ic: "clock", c: "#0ea5b7", d: "Help by the hour for specific jobs — deep cleaning, a party, or an extra pair of hands.", avail: "Subject to staff availability in your locality", arr: "Minimum booking hours set per city", price: "Charged per hour" },
-  { k: "part-time", n: "Part-Time Service", ic: "cal", c: "#16A085", d: "A fixed daily slot of 2–4 hours, morning or evening, for regular household work.", avail: "Most services, most localities", arr: "Fixed daily slot, weekly off agreed", price: "Monthly, based on hours & tasks" },
-  { k: "full-time", n: "Full-Time Service", ic: "brief", c: "#F4A340", d: "A dedicated professional for 8–10 hours a day who goes home each evening.", avail: "All listed services", arr: "8–10 hrs/day, weekly off agreed", price: "Monthly salary + service fee" },
-  { k: "live-in", n: "24/7 Live-In Service", ic: "home", c: "#142D4E", d: "A professional who stays with your family, with rest hours and leave agreed upfront.", avail: "Maids, cooks, nannies, japa & elder care", arr: "Family provides stay & meals", price: "Monthly salary + service fee" },
+  { k: "hourly", n: "Hourly Service", ic: "clock", c: "#8e7029", d: "Help by the hour for specific jobs — deep cleaning, a party, or an extra pair of hands.", avail: "Subject to staff availability in your locality", arr: "Minimum booking hours set per city", price: "Charged per hour" },
+  { k: "part-time", n: "Part-Time Service", ic: "cal", c: "#ad811e", d: "A fixed daily slot of 2–4 hours, morning or evening, for regular household work.", avail: "Most services, most localities", arr: "Fixed daily slot, weekly off agreed", price: "Monthly, based on hours & tasks" },
+  { k: "full-time", n: "Full-Time Service", ic: "brief", c: "#d7a62e", d: "A dedicated professional for 8–10 hours a day who goes home each evening.", avail: "All listed services", arr: "8–10 hrs/day, weekly off agreed", price: "Monthly salary + service fee" },
+  { k: "live-in", n: "24/7 Live-In Service", ic: "home", c: "#302c22", d: "A professional who stays with your family, with rest hours and leave agreed upfront.", avail: "Maids, cooks, nannies, japa & elder care", arr: "Family provides stay & meals", price: "Monthly salary + service fee" },
 ];
 export const STATUSES = ["New Enquiry", "Contacted", "Profile Shortlisted", "Interview Scheduled", "Booking Confirmed", "Service Started", "Completed", "Cancelled"];
 export const ST_COLOR: Record<string, string> = { "New Enquiry": "#2563eb", Contacted: "#7c3aed", "Profile Shortlisted": "#0891b2", "Interview Scheduled": "#c26a0a", "Booking Confirmed": "#0f8a72", "Service Started": "#0b6e5c", Completed: "#142D4E", Cancelled: "#dc2626" };
@@ -215,7 +215,7 @@ export const PHOTOS: Record<string, Pic> = Object.fromEntries(
   Object.entries(photoList.photos as Record<string, Omit<Pic, "src"> & { remote: string }>).map(([k, p]) => [k, { src: `/images/${k}.jpg`, by: p.by, source: p.source, page: p.page, alt: p.alt, indian: p.indian }]),
 );
 
-export const HS_BG = ["linear-gradient(135deg,#0d213a,#142D4E 55%,#174e63)", "linear-gradient(135deg,#0a2a2c,#0e5c50 55%,#16A085)", "linear-gradient(135deg,#2a1708,#6e3a0c 55%,#b8640f)", "linear-gradient(135deg,#2b0f1f,#5e2445 55%,#9a4069)", "linear-gradient(135deg,#0c1d3a,#1d4e89 60%,#3b7cc4)", "linear-gradient(135deg,#0d1726,#142D4E 50%,#3a5a80)"];
+export const HS_BG = ["linear-gradient(135deg,#11110f,#292318 55%,#705416)", "linear-gradient(135deg,#171715,#3b2c14 55%,#9a7420)", "linear-gradient(135deg,#21180c,#62410d 55%,#c18a19)", "linear-gradient(135deg,#171715,#46351a 55%,#8d681c)", "linear-gradient(135deg,#141310,#332a1b 60%,#80611f)", "linear-gradient(135deg,#11110f,#302719 50%,#9a7420)"];
 export const HS_FLOAT: [string, string, string][] = [["shield", "ID & reference checked", "on every profile"], ["interview", "Interview first", "before you confirm"], ["clock", "Hourly to live-in", "you choose the schedule"], ["refresh", "Replacement help", "as per our policy"]];
 
 export const POL: Record<string, [string, string[]]> = {
