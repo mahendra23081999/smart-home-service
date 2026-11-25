@@ -53,14 +53,21 @@ export function StoreProvider({ children }: { children: ReactNode }) {
     try {
       const raw = localStorage.getItem(LS);
       if (raw) {
-        const d = JSON.parse(raw);
+        const d: Partial<State> = JSON.parse(raw);
         if (d && d.v === 1) {
           const base = seed();
+          const normalizePartTimeHours = (text: string) => text.replace(/2\s*[-–—]\s*4/g, "4-5");
+          const services = (d.services || base.services).map(s => s.slug === "part-time-maid"
+            ? { ...s, short: normalizePartTimeHours(s.short), features: s.features.map(normalizePartTimeHours) }
+            : s);
+          const plans = (d.plans || base.plans).map(p => p.id === "essential"
+            ? { ...p, desc: normalizePartTimeHours(p.desc), features: p.features.map(normalizePartTimeHours) }
+            : p);
           // Fill contact details that were saved empty in older versions with the business defaults.
           const st = { ...base.settings, ...(d.settings || {}) };
           for (const k of ["phone", "wa", "email", "address"] as const) if (!st[k]) st[k] = base.settings[k];
           if (st.address === "Ahmedabad, Gujarat") st.address = base.settings.address; // old placeholder
-          setS({ ...base, ...d, settings: st });
+          setS({ ...base, ...d, services, plans, settings: st });
         }
       }
     } catch { /* ignore */ }
